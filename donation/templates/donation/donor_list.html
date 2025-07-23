@@ -1,0 +1,48 @@
+{% extends 'donation/base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="mb-4">Available Donors</h2>
+
+<form method="GET" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <select name="blood_group" class="form-select">
+            <option value="">All Blood Groups</option>
+            {% for bg in blood_groups %}
+                <option value="{{ bg }}" {% if bg == selected_bg %}selected{% endif %}>{{ bg }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="organ" class="form-select">
+            <option value="">All Organs</option>
+            {% for og in organs %}
+                <option value="{{ og }}" {% if og == selected_og %}selected{% endif %}>{{ og }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th><th>Blood Group</th><th>Organ</th><th>City</th><th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.organ }}</td>
+            <td>{{ donor.city }}</td>
+            <td>{{ donor.phone }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No donors available at the moment.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

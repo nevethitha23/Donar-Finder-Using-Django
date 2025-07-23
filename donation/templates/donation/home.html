@@ -1,0 +1,101 @@
+{% extends 'donation/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Banner -->
+<div class="text-center">
+    <img src="{% static 'donation/images/banner.png' %}" class="img-fluid mb-4" alt="Banner">
+    <h1 class="display-4 fw-bold">Welcome to Donor Finder</h1>
+    <p class="lead">Your one-stop platform to find or become a lifesaver.</p>
+    <a class="btn btn-danger btn-lg me-2" href="/register/">Donate Now</a>
+   
+</div>
+
+<hr class="my-5">
+
+<!-- About Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">About Us</h2>
+    <p class="text-center">Donor Finder is dedicated to connecting heroes — donors who can save lives — with those in urgent need. Whether it’s blood, organs, or help, our platform ensures every drop and gesture counts.</p>
+</div>
+
+<!-- Stories Section -->
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Stories That Inspire</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{% static 'donation/images/saved1.jpg' %}" class="card-img-top" alt="Life Saved 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Priya's Story</h5>
+                        <p class="card-text">Priya’s life was saved by a stranger’s kidney donation. Today, she’s a nurse helping others daily.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{% static 'donation/images/saved2.jpg' %}" class="card-img-top" alt="Life Saved 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Arun’s Journey</h5>
+                        <p class="card-text">Arun survived a fatal accident thanks to a rare blood donor found through this platform.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{% static 'donation/images/saved3.jpg' %}" class="card-img-top" alt="Life Saved 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Sneha & Hope</h5>
+                        <p class="card-text">Sneha donated bone marrow to a child with leukemia. Both lives changed forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reviews Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">What People Say</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <blockquote class="blockquote">
+                <p>"This app helped me find a donor in just 2 hours. Amazing!"</p>
+                <footer class="blockquote-footer">Ravi Kumar</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4 text-center">
+            <blockquote class="blockquote">
+                <p>"As a donor, it’s been fulfilling to know I made a difference."</p>
+                <footer class="blockquote-footer">Swetha D.</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4 text-center">
+            <blockquote class="blockquote">
+                <p>"We got blood for my uncle on time. Forever grateful."</p>
+                <footer class="blockquote-footer">Karthik M.</footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Gallery of Giving</h2>
+        <div class="row g-3">
+            <div class="col-md-3"><img src="{% static 'donation/images/donate.jpg' %}" class="img-fluid rounded" alt="Gallery 1"></div>
+            <div class="col-md-3"><img src="{% static 'donation/images/event1.jpg' %}" class="img-fluid rounded" alt="Gallery 2"></div>
+            <div class="col-md-3"><img src="{% static 'donation/images/event2.jpg' %}" class="img-fluid rounded" alt="Gallery 3"></div>
+            <div class="col-md-3"><img src="{% static 'donation/images/event3.jpg' %}" class="img-fluid rounded" alt="Gallery 4"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Nearby Hospitals -->
+<div class="text-center my-5">
+    <a href="/hospitals/" class="btn btn-success btn-lg">Check Nearby Hospitals</a>
+</div>
+
+{% endblock %}

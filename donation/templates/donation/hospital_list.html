@@ -1,0 +1,20 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+<h2>Nearby Hospitals</h2>
+<form method="get" class="mb-3">
+    <input type="text" name="q" placeholder="Search hospital" class="form-control">
+</form>
+<div class="row">
+    {% for hospital in hospitals %}
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <img src="{{ hospital.image.url }}" class="card-img-top" alt="{{ hospital.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ hospital.name }}</h5>
+                <a href="{% url 'hospital_detail' hospital.pk %}" class="btn btn-outline-danger">View</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

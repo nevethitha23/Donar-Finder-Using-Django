@@ -1,0 +1,6 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+<h3>Thank you! Your request was submitted successfully.</h3>
+<p>For further assistance, contact {{ hospital.name }} at <strong>{{ hospital.phone }}</strong>.</p>
+<a href="{% url 'hospital_list' %}" class="btn btn-outline-primary">Back to Hospitals</a>
+{% endblock %}

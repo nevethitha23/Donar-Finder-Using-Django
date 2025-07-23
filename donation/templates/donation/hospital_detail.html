@@ -1,0 +1,9 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+<h2>{{ hospital.name }}</h2>
+<img src="{{ hospital.image.url }}" class="img-fluid mb-3">
+<p>City: {{ hospital.city }}</p>
+<p>Phone: {{ hospital.phone }}</p>
+<a href="{% url 'hospital_form' hospital.pk 'donate' %}" class="btn btn-success">Donate</a>
+<a href="{% url 'hospital_form' hospital.pk 'need' %}" class="btn btn-warning">Need Donor</a>
+{% endblock %}
